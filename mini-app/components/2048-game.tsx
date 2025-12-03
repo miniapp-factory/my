@@ -64,7 +64,7 @@ function move(board: number[][], dir: "up" | "down" | "left" | "right"): { board
   if (dir === "right") rotated = reverseRows(board);
 
   let scoreDelta = 0;
-  const newBoard: number[][] = [];
+  let newBoard: number[][] = [];
   for (const row of rotated) {
     const { newRow, scoreDelta: delta } = slideAndCombine(row);
     newBoard.push(newRow);
